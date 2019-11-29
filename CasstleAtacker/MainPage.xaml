@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="CastleAttacker.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CastleAttacker"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:CastleAttacker.Models"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{x:Bind ViewModel}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" 
+                    Orientation="Horizontal"
+                    Margin="10">
+
+            <Button Grid.Row="0"
+                    Content="Start Attack"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Click="ButtonBase_OnClick"/>
+
+            <TextBox PlaceholderText="MaxNumber"
+                     Height="32"
+                     VerticalAlignment="Top"
+                     Margin="10,0"
+                     Text="{x:Bind ViewModel.MaxNumber, Mode=TwoWay}"/>
+
+        </StackPanel>
+        
+
+        <GridView ItemsSource="{x:Bind ViewModel.Attack.Cells, Mode=OneWay}"
+                  Grid.Row="1"
+                  Margin="10">
+            <GridView.ItemTemplate>
+                <DataTemplate x:Name="CellTemplate" x:DataType="models:Cell">
+                    <Grid Height="100"
+                          Width="100"
+                          Background="{x:Bind UiBrush}">
+                    </Grid>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+    </Grid>
+</Page>
+
+    
