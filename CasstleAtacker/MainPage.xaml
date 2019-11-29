@@ -43,6 +43,18 @@
                     <Grid Height="100"
                           Width="100"
                           Background="{x:Bind UiBrush}">
+                        <StackPanel Margin="4">
+                            <TextBlock>
+                                <Run Text="Damage: "
+                                     FontWeight="SemiBold"/>
+                                <Run Text="{x:Bind Damage}"/>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run Text="Health: "
+                                     FontWeight="SemiBold"/>
+                                <Run Text="{x:Bind Health}"/>
+                            </TextBlock>
+                        </StackPanel>
                     </Grid>
                 </DataTemplate>
             </GridView.ItemTemplate>

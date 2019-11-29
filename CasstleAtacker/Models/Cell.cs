@@ -18,6 +18,8 @@ namespace CastleAttacker.Models
         };
 
         public CellColor Color { get; }
+        public int Damage { get; set; }
+        public int Health { get; set; }
 
         public Brush UiBrush { get; }
 
