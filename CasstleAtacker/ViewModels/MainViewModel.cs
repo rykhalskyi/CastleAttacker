@@ -13,12 +13,15 @@ namespace CasstleAtacker.ViewModels
         public Attack Attack { get; private set; }
 
         public string MaxNumber { get; set; }
+        public string MaxDamage { get; set; }
+        public string MaxHealth { get; set; }
 
         public void StartAttack()
         {
             if (int.TryParse(MaxNumber, out int maxNumber) && maxNumber < 7)
             {
-                Attack = Attack.StartAttack(maxNumber);
+                
+                Attack = Attack.StartAttack(maxNumber, GetInt(MaxDamage), GetInt(MaxHealth));
             }
             else
             {
@@ -26,6 +29,11 @@ namespace CasstleAtacker.ViewModels
             }
             
             OnPropertyChanged(nameof(Attack));
+        }
+
+        int GetInt(string str)
+        {
+            return int.TryParse(str, out int damage) ? damage : 0;
         }
 
         [NotifyPropertyChangedInvocator]

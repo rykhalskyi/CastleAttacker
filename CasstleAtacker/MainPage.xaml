@@ -32,6 +32,18 @@
                      Margin="10,0"
                      Text="{x:Bind ViewModel.MaxNumber, Mode=TwoWay}"/>
 
+            <TextBox PlaceholderText="MaxDamage"
+                     Height="32"
+                     VerticalAlignment="Top"
+                     Margin="10,0,0,0"
+                     Text="{x:Bind ViewModel.MaxNumber, Mode=TwoWay}"/>
+
+            <TextBox PlaceholderText="MaxHealth"
+                     Height="32"
+                     VerticalAlignment="Top"
+                     Margin="10,0,0,0"
+                     Text="{x:Bind ViewModel.MaxNumber, Mode=TwoWay}"/>
+
         </StackPanel>
         
 
