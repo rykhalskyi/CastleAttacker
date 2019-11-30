@@ -125,10 +125,14 @@
     <Compile Include="Models\Attack.cs" />
     <Compile Include="Models\Cell.cs" />
     <Compile Include="Models\CellColor.cs" />
+    <Compile Include="Models\GameRound.cs" />
     <Compile Include="Models\RandomColor.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\DicesUserControl.xaml.cs">
+      <DependentUpon>DicesUserControl.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -193,6 +197,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DicesUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
