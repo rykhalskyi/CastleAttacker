@@ -14,30 +14,30 @@ namespace CasstleAtacker.Views
             this.InitializeComponent();
         }
 
-        public DiceType FirstDice
+        public string FirstDice
         {
-            get { return (DiceType)GetValue(FirstDiceProperty); }
+            get { return (string)GetValue(FirstDiceProperty); }
             set { SetValue(FirstDiceProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for FirstDice.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty FirstDiceProperty =
-            DependencyProperty.Register("FirstDice", typeof(DiceType), typeof(DicesUserControl), new PropertyMetadata(0, OnFirstDiceSet));
+            DependencyProperty.Register("FirstDice", typeof(string), typeof(DicesUserControl), new PropertyMetadata(0));
 
         private static void OnFirstDiceSet(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             throw new NotImplementedException();
         }
 
-        public DiceType SecondDice
+        public string SecondDice
         {
-            get { return (DiceType)GetValue(SecondDiceProperty); }
+            get { return (string)GetValue(SecondDiceProperty); }
             set { SetValue(SecondDiceProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for SecondDice.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty SecondDiceProperty =
-            DependencyProperty.Register("SecondDice", typeof(DiceType), typeof(DicesUserControl), new PropertyMetadata(0, OnSecondDiceSet));
+            DependencyProperty.Register("SecondDice", typeof(string), typeof(DicesUserControl), new PropertyMetadata(0));
 
         private static void OnSecondDiceSet(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {

@@ -9,33 +9,19 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <Grid Height="100" Background="Black">
+    <Grid Height="50"
+          Background="Black"
+          Width="300">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.5*"/>
             <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
 
-        <Border Grid.Column="0"
-                Background="White"
-                Margin="5">
-            <TextBlock Text="Rapairment"
-                       x:Name="FirstDiceText"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       FontSize="24"
-                       FontWeight="SemiBold"/>
-        </Border>
+        <local:DiceUserControl Grid.Column="0"
+                               Dice="{x:Bind FirstDice, Mode=OneWay}"/>
 
-        <Border Grid.Column="1"
-                Background="White"
-                Margin="5">
-            
-            <TextBlock Text="Red"
-                       x:Name="SecondDiceText"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       FontSize="24"
-                       FontWeight="SemiBold"/>
-        </Border>
+        <local:DiceUserControl Grid.Column="1"
+                               Dice="{x:Bind SecondDice, Mode=OneWay}"/>
+        
     </Grid>
 </UserControl>

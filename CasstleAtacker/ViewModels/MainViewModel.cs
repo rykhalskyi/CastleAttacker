@@ -3,6 +3,7 @@ using System.Runtime.CompilerServices;
 using Windows.UI.Composition;
 using CasstleAtacker.Annotations;
 using CastleAttacker.Models;
+using CasstleAtacker.Models;
 
 namespace CasstleAtacker.ViewModels
 {
@@ -15,6 +16,9 @@ namespace CasstleAtacker.ViewModels
         public string MaxNumber { get; set; }
         public string MaxDamage { get; set; }
         public string MaxHealth { get; set; }
+
+        public string FirstDice { get; set; }
+        public string SecondDice { get; set; }
 
         public void StartAttack()
         {
@@ -34,6 +38,17 @@ namespace CasstleAtacker.ViewModels
         int GetInt(string str)
         {
             return int.TryParse(str, out int damage) ? damage : 0;
+        }
+
+        public void ThrowDices()
+        {
+            var dices = GameRound.Run();
+
+            FirstDice = dices.Item1;
+            SecondDice = dices.Item2;
+
+            OnPropertyChanged(nameof(FirstDice));
+            OnPropertyChanged(nameof(SecondDice));
         }
 
         [NotifyPropertyChangedInvocator]

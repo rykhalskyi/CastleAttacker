@@ -17,5 +17,10 @@ namespace CastleAttacker
         {
             ViewModel.StartAttack();
         }
+
+        private void ThrowButton_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.ThrowDices();
+        }
     }
 }

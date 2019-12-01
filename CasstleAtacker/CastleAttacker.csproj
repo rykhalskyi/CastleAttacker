@@ -125,6 +125,10 @@
     <Compile Include="Models\Attack.cs" />
     <Compile Include="Models\Cell.cs" />
     <Compile Include="Models\CellColor.cs" />
+    <Compile Include="Models\Dices\ColorDice.cs" />
+    <Compile Include="Models\Dices\DiceBase.cs" />
+    <Compile Include="Models\Dices\IDice.cs" />
+    <Compile Include="Models\Dices\NumberDice.cs" />
     <Compile Include="Models\GameRound.cs" />
     <Compile Include="Models\RandomColor.cs" />
     <Compile Include="Properties\Annotations.cs" />
@@ -132,6 +136,9 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\DicesUserControl.xaml.cs">
       <DependentUpon>DicesUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DiceUserControl.xaml.cs">
+      <DependentUpon>DiceUserControl.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -199,6 +206,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\DicesUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DiceUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
